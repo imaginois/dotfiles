@@ -1,5 +1,24 @@
 #!/usr/bin/env bash
 
+# https://raw.githubusercontent.com/nicknisi/dotfiles/master/install/osx.sh
+# https://raw.githubusercontent.com/mathiasbynens/dotfiles/master/.macos
+# https://www.intego.com/mac-security-blog/unlock-the-macos-docks-hidden-secrets-in-terminal/
+
+echo "========================================================================="
+echo "Setting MacOS defaults."
+echo "========================================================================="
+
+
+defaults read NSGlobalDomain > DefaultsGlobalBefore.info
+
+osascript -e 'tell application "System Preferences" to quit'
+
+
+# ~/.macos — https://mths.be/macos
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+
 echo -e "\\n\\nSetting OS X settings"
 echo "=============================="
 
@@ -36,8 +55,8 @@ defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"lis
 echo "Have the Dock show only active apps"
 defaults write com.apple.dock static-only -bool true; killall Dock
 
-echo "defaults write com.apple.dock single-app -bool true; killall Dock"
-defaults write com.apple.dock single-app -bool true; killall Dock
+echo "Show only one app at a time"
+defaults write com.apple.dock single-app -bool false; killall Dock
 
 echo "Highlight hidden apps in the Dock"
 defaults write com.apple.Dock showhidden -bool yes; killall Dock
@@ -46,34 +65,34 @@ echo "highlights the item under the cursor, mirroring the selection highlight se
 defaults write com.apple.dock mouse-over-hilite-stack -bool yes; killall Dock
 
 echo "disable App Nap for all apps"
-defaults write NSAppSleepDisabled -bool true;
+defaults write -g NSAppSleepDisabled -bool true;
 
 echo "disable automatic app termination when inactive"
-defaults write NSDisableAutomaticTermination -bool true
+defaults write -g NSDisableAutomaticTermination -bool true
 
 echo "File save, save to disk by default rather than to iCloud"
-defaults write NSDocumentSaveNewDocumentsToCloud -bool false
+defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 
 echo "Set dock icon size"
-defaults write defaults write com.apple.dock largesize -float 60
+defaults write -g com.apple.dock largesize -float 60
 
 echo "Change Apple OS X Dock size"
-defaults write com.apple.dock tilesize -int 32; killall Dock
+defaults write -g com.apple.dock tilesize -int 32; killall Dock
 
 echo "Interface, action on double-clicking window"
-defaults write AppleActionOnDoubleClick -string "Maximize";
+defaults write -g AppleActionOnDoubleClick -string "Maximize";
 
 echo "Always show scrollbars"
-defaults write AppleShowScrollBars -string "WhenScrolling" # or "Automatic" or "Always"
+defaults write -g AppleShowScrollBars -string "WhenScrolling" # or "Automatic" or "Always"
 
 echo "Close always confirms changes"
-defaults write NSCloseAlwaysConfirmsChanges -bool true
+defaults write -g NSCloseAlwaysConfirmsChanges -bool true
 
 echo "Disable opening and closing window animations"
-defaults write NSAutomaticWindowAnimationsEnabled -bool false
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 
 echo "Set sidebar icon size to medium"
-defaults write NSTableViewDefaultSizeMode -int 2
+defaults write -g NSTableViewDefaultSizeMode -int 2
 
 
 # echo "Enable the 2D Dock"
@@ -231,6 +250,103 @@ defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Fi
 echo "Enable Dashboard dev mode (allows keeping widgets on the desktop)"
 defaults write com.apple.dashboard devmode -bool true
 
+echo "Miniaturise on double-click"
+defaults write AppleMiniaturizeOnDoubleClick -bool true
+
+
+# Interface, table view default size NSTableViewDefaultSizeMode -int 2
+# Keyboard, disable press-and-hold for keys in favor of key repeat ApplePressAndHoldEnabled -bool false
+# Keyboard, set a shorter delay until key repeat InitialKeyRepeat -int 12 normal 68
+# Keyboard, set a very fast keyboard repeat rate KeyRepeat -int 1 normal 6
+# Localisation, set locale AppleLocale -string "en_GB@currency=EUR", or "en_GB", or "en_US" etc.
+# Localisation, set measurement units AppleMeasurementUnits -string "Centimeters" or "Inches"
+# Localisation, set metric units AppleMetricUnits -bool true
+# Localisation, set temperature units AppleTemperatureUnit -string "Celsius"
+# Print, expand print panel by default PMPrintingExpandedStateForPrint -bool true and PMPrintingExpandedStateForPrint2 -bool true
+# Sound, disable flash with system beep com.apple.sound.beep.flash -bool false
+# Sound, set system beep sound com.apple.sound.beep.sound -string "/System/Library/Sounds/Sosumi.aiff"
+# Text, disable web automatic spelling correction WebAutomaticSpellingCorrectionEnabled -bool false
+# Text, display ASCII control characters using caret notation in standard text views NSTextShowsControlCharacters -bool true
+# Text, spell checker automatically identifies languages NSSpellCheckerAutomaticallyIdentifiesLanguages -bool true
+# Trackpad, enable Force Click com.apple.trackpad.forceClick -bool true
+# Trackpad, scaling factor com.apple.trackpad.scaling -float 1.5
+# Web views, add a contextual menu item for showing the Web Inspector WebKitDeveloperExtras -bool true
+
+
+# Hot corners
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+# Top left screen corner → Mission Control
+defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-modifier -int 0
+# Top right screen corner → Notification Center
+defaults write com.apple.dock wvous-tr-corner -int 12
+defaults write com.apple.dock wvous-tr-modifier -int 0
+# Bottom left screen corner → Show Desktop
+defaults write com.apple.dock wvous-bl-corner -int 4
+defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-tr-modifier -int 0
+# Bottom right screen corner → Launchpad
+defaults write com.apple.dock wvous-br-corner -int 11
+defaults write com.apple.dock wvous-br-modifier -int 0
+
+echo "Show language menu in the top right corner of the boot screen"
+sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+
+
+
+echo "Set standby delay to 24 hours (default is 1 hour)"
+sudo pmset -a standbydelay 86400
+
+
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# Disable smart dashes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Disable the crash reporter
+#defaults write com.apple.CrashReporter DialogType -string "none"
+
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock
+# in the login window
+# sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+# Restart automatically if the computer freezes
+# sudo systemsetup -setrestartfreeze on
+
+# Never go into computer sleep mode
+# sudo systemsetup -setcomputersleep Off > /dev/null
+
+# Disable Notification Center and remove the menu bar icon
+# launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+
+# Set Help Viewer windows to non-floating mode
+# defaults write com.apple.helpviewer DevMode -bool true
+
+
 #echo "Reset Launchpad"
 #[ -e ~/Library/Application\ Support/Dock/*.db ] && rm ~/Library/Application\ Support/Dock/*.db
 
@@ -245,6 +361,47 @@ defaults write com.apple.dashboard devmode -bool true
 #Fix for the ancient UTF-8 bug in QuickLook (http://mths.be/bbo)
 # Commented out, as this is known to cause problems when saving files in Adobe Illustrator CS5 :(
 #echo "0x08000100:0" > ~/.CFUserTextEncoding
+
+
+###############################################################################
+# SSD-specific tweaks                                                         #
+###############################################################################
+
+
+# Disable hibernation (speeds up entering sleep mode)
+# sudo pmset -a hibernatemode 0
+
+# Remove the sleep image file to save disk space
+# sudo rm /private/var/vm/sleepimage
+# Create a zero-byte file instead…
+# sudo touch /private/var/vm/sleepimage
+# …and make sure it can’t be rewritten
+# sudo chflags uchg /private/var/vm/sleepimage
+
+
+###############################################################################
+# Screen                                                                      #
+###############################################################################
+
+# Require password immediately after sleep or screen saver begins
+# defaults write com.apple.screensaver askForPassword -int 1
+# defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Save screenshots to the desktop
+defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+defaults write com.apple.screencapture type -string "png"
+
+# Enable HiDPI display modes (requires restart)
+sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+
+
+
+
+
+
+defaults read NSGlobalDomain > DefaultsGlobalAfter.info
 
 echo "Kill affected applications"
 for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done

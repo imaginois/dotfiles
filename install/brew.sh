@@ -5,6 +5,17 @@ if test ! "$( command -v brew )"; then
     ruby -e "$( curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )"
 fi
 
+echo "|"
+echo "|"
+echo "|"
+echo "|"
+echo "|"
+echo "|"
+echo "========================================================================="
+echo "Installing homebrew packages."
+echo "========================================================================="
+
+
 echo -e "\\n\\nInstalling homebrew packages..."
 echo "=============================="
 
@@ -44,6 +55,7 @@ casks=(
     placeholder
     google-chrome
     chrome-devtools
+    iterm2
     atom
     sublime-text
     spectacle
@@ -60,6 +72,11 @@ casks=(
     transmission
     firefox
     flycut
+    slack
+    discord
+    gitter
+    dropbox
+    google-backup-and-sync
     placeholder
   )
 
