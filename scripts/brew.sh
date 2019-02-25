@@ -5,15 +5,11 @@ if test ! "$( command -v brew )"; then
     ruby -e "$( curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )"
 fi
 
-echo "|"
-echo "|"
-echo "|"
-echo "|"
-echo "|"
-echo "|"
-echo "========================================================================="
-echo "Installing homebrew packages."
-echo "========================================================================="
+echo -e "\n\n\n"
+echo -e "\n\n\n"
+echo -e "========================================================================="
+echo -e "Installing homebrew packages."
+echo -e "========================================================================="
 
 
 echo -e "\\n\\nInstalling homebrew packages..."

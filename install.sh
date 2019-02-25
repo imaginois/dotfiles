@@ -15,10 +15,10 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-echo "\n\n\n"
-echo "========================================================================="
-echo "Installing dotfiles."
-echo "========================================================================="
+echo -e "\n\n\n"
+echo -e "========================================================================="
+echo -e "Installing dotfiles."
+echo -e "========================================================================="
 
 #echo "Initializing submodule(s)"
 #git submodule update --init --recursive
@@ -42,8 +42,10 @@ elif ! [[ $SHELL =~ .*zsh.* ]]; then
     chsh -s "$(command -v zsh)"
 fi
 
-echo "==========================="
-echo "+++++++++++++++++++++++++++"
-echo "\n\nDone. Reload your terminal.\n\n"
-echo "+++++++++++++++++++++++++++"
-echo "==========================="
+
+echo -e "\n\n\n\n\n"
+echo -e "==========================="
+echo -e "+++++++++++++++++++++++++++"
+echo -e "\n\nDone. Reload your terminal.\n\n"
+echo -e "+++++++++++++++++++++++++++"
+echo -e "==========================="
