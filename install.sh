@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
+DOTFILES=$HOME/.dotfiles
+BACKUP_DIR=$HOME/.dotfiles-backup
+
 command_exists() {
     type "$1" > /dev/null 2>&1
 }
+
+xcode-select --install
 
 # Ask for the administrator password upfront
 sudo -v
@@ -10,35 +15,24 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-
-echo "|"
-echo "|"
-echo "|"
-echo "|"
-echo "|"
-echo "|"
+echo "\n\n\n"
 echo "========================================================================="
 echo "Installing dotfiles."
 echo "========================================================================="
 
-echo "Initializing submodule(s)"
-git submodule update --init --recursive
+#echo "Initializing submodule(s)"
+#git submodule update --init --recursive
 
-# source install/link.sh
-
-# source install/git.sh
+source scripts/backup.sh
+# source scripts/link.sh
+# source scripts/git.sh
 
 # only perform macOS-specific install
 if [ "$(uname)" == "Darwin" ]; then
     echo -e "\\n\\nRunning on macOS"
-
-    source install/brew.sh
-
-    source install/osx.sh
+    source scripts/brew.sh
+    source scripts/osx.sh
 fi
-
-echo "creating vim directories"
-mkdir -p ~/.vim-tmp
 
 if ! command_exists zsh; then
     echo "zsh not found. Please install and then re-run installation scripts"
@@ -48,4 +42,8 @@ elif ! [[ $SHELL =~ .*zsh.* ]]; then
     chsh -s "$(command -v zsh)"
 fi
 
-echo "Done. Reload your terminal."
+echo "==========================="
+echo "+++++++++++++++++++++++++++"
+echo "\n\nDone. Reload your terminal.\n\n"
+echo "+++++++++++++++++++++++++++"
+echo "==========================="
