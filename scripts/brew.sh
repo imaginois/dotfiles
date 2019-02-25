@@ -42,6 +42,8 @@ formulas=(
     git-standup
     entr
     zplug
+    watch
+    ranger
     peco
     ntfs-3g
 )

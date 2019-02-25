@@ -24,14 +24,35 @@ cp -r ~/.config $BACKUP_DIR/
 
 linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
 
-for file in $linkables; do
-    filename=".$( basename "$file" '.symlink' )"
-    target="$HOME/$filename"
+files=(
+  .zshrc
+  .gitconfig
+  test
+)
+
+dirs=(
+  .atom
+)
+
+
+for file in $files; do
+    target="$HOME/$file"
     if [ -f "$target" ]; then
-        echo "backing up $filename"
-        cp "$target" "$BACKUP_DIR"
+        echo "### backing up $file"
+        cp -v "$target" "$BACKUP_DIR"
     else
-        echo -e "$filename does not exist at this location or is a symlink"
+        echo -e "$file does not exist at this location or is a symlink"
+    fi
+done
+
+
+for dir in $dirs; do
+    target="$HOME/$dir"
+    if [ -d "$target" ]; then
+        echo "### backing up $dir"
+        cp -rv "$target" "$BACKUP_DIR"
+    else
+        echo -e "$dir does not exist at this location or is a symlink"
     fi
 done
 
