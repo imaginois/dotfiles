@@ -4,6 +4,9 @@
 # https://raw.githubusercontent.com/mathiasbynens/dotfiles/master/.macos
 # https://www.intego.com/mac-security-blog/unlock-the-macos-docks-hidden-secrets-in-terminal/
 
+
+
+
 echo "========================================================================="
 echo "Setting MacOS defaults."
 echo "========================================================================="
@@ -53,7 +56,7 @@ echo "Create macOS Dock recent items stacks"
 defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'; killall Dock
 
 echo "Have the Dock show only active apps"
-defaults write com.apple.dock static-only -bool true; killall Dock
+defaults write com.apple.dock static-only -bool false; killall Dock
 
 echo "Show only one app at a time"
 defaults write com.apple.dock single-app -bool false; killall Dock
