@@ -27,7 +27,7 @@ linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
 files=(
   .zshrc
   .gitconfig
-  test
+  .bashrc
 )
 
 dirs=(
@@ -35,7 +35,7 @@ dirs=(
 )
 
 
-for file in $files; do
+for file in ${files[@]}; do
     target="$HOME/$file"
     if [ -f "$target" ]; then
         echo "### backing up $file"
@@ -46,24 +46,16 @@ for file in $files; do
 done
 
 
-for dir in $dirs; do
+for dir in ${dirs[@]}; do
     target="$HOME/$dir"
     if [ -d "$target" ]; then
         echo "### backing up $dir"
-        cp -rv "$target" "$BACKUP_DIR"
+        # cp -rv "$target" "$BACKUP_DIR"
+        rsync -av --progress $target $BACKUP_DIR --exclude *cache*
     else
         echo -e "$dir does not exist at this location or is a symlink"
     fi
 done
-
-# for filename in "$HOME/.config/nvim" "$HOME/.vim" "$HOME/.vimrc"; do
-#     if [ ! -L "$filename" ]; then
-#         echo "backing up $filename"
-#         cp -rf "$filename" "$BACKUP_DIR"
-#     else
-#         echo -e "$filename does not exist at this location or is a symlink"
-#     fi
-# done
 
 
 echo -e "\\n\\n\\n"

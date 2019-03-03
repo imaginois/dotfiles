@@ -19,6 +19,7 @@ formulas=(
     bat
     diff-so-fancy
     dnsmasq
+    docker
     fzf
     git
     highlight
@@ -65,6 +66,8 @@ casks=(
     vmware-fusion
     vagrant
     virtualbox
+    kitematic
+    sourcetree
     osxfuse
     vlc
     transmission
@@ -74,6 +77,7 @@ casks=(
     discord
     gitter
     dropbox
+    the-unarchiver
     google-backup-and-sync
     placeholder
   )
@@ -106,6 +110,10 @@ echo "=============================="
 #echo "=============================="
 #pip2 install --user neovim
 #pip3 install --user neovim
+
+# Additional scripts
+vagrant plugin install vagrant-digitalocean
+
 
 # Change the default shell to zsh
 zsh_path="$( command -v zsh )"
