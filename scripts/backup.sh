@@ -19,8 +19,11 @@ mkdir -p "$BACKUP_DIR"
 echo "List of files:"
 ls -la
 
-echo "Backup ~/.config"
-cp -r ~/.config $BACKUP_DIR/
+if [ -d "$HOME/.config" ]; then
+  echo "Backup ${HOME}.config"
+  cp -rv ~/.config $BACKUP_DIR/
+  rm -rf $HOME/.config
+fi
 
 linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
 

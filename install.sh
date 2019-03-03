@@ -25,7 +25,7 @@ echo -e "=======================================================================
 
 source scripts/backup.sh
 # source scripts/link.sh
-# source scripts/git.sh
+source scripts/git.sh
 
 # only perform macOS-specific install
 if [ "$(uname)" == "Darwin" ]; then
