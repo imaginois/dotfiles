@@ -53,7 +53,6 @@ formulas=(
 
 
 casks=(
-    placeholder
     google-chrome
     chrome-devtools
     iterm2
@@ -81,7 +80,6 @@ casks=(
     dropbox
     the-unarchiver
     google-backup-and-sync
-    placeholder
   )
 
 for formula in "${formulas[@]}"; do
@@ -101,6 +99,19 @@ for cask in "${casks[@]}"; do
         brew cask install ${cask}
     fi
 done
+
+
+brew tap caskroom/fonts
+brew update
+brew cask install font-hack-nerd-font
+brew cask install font-inconsolata-nerd-font
+brew cast install font-mononoki-nerd-font
+brew cast install font-inconsolata-dz-for-powerline
+brew cast install font-inconsolata-for-powerline
+brew cast install font-powerline-symbols
+brew cast install font-ubuntu-mono-derivative-powerline
+brew cleanup
+
 
 # After the install, setup fzf
 echo -e "\\n\\nRunning fzf install script..."

@@ -25,6 +25,7 @@ echo -e "=======================================================================
 
 # Generic commands to execute
 sudo easy_install pip
+ln -s $DOTFILES/bin $HOME
 
 
 source scripts/backup.sh
