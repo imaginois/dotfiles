@@ -76,8 +76,8 @@ defaults write -g NSDisableAutomaticTermination -bool true
 echo "File save, save to disk by default rather than to iCloud"
 defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 
-echo "Set dock icon size"
-defaults write -g com.apple.dock largesize -float 60
+#echo "Set dock icon size"
+#defaults write -g com.apple.dock largesize -float 60
 
 echo "Change Apple OS X Dock size"
 defaults write -g com.apple.dock tilesize -int 32; killall Dock
