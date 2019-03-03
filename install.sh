@@ -24,6 +24,7 @@ echo -e "=======================================================================
 #git submodule update --init --recursive
 
 source scripts/backup.sh
+source scripts/restore.sh
 # source scripts/link.sh
 source scripts/git.sh
 
