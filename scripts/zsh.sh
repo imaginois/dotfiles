@@ -16,7 +16,7 @@ fi
 
 echo "Remove and overwrite the default .zshrc file"
 rm -vf $HOME/.zshrc
-cp -v $DOTFILES/dot/.zshrc $HOME
+ln -s -v $DOTFILES/dot/.zshrc $HOME
 
 # echo  "Change your default shell"
 # chsh -s /bin/zsh

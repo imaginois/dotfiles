@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-printf "Setting up Git...\\n\\n"
+echo -e "\\n\\n\\n"
+echo -e "========================================================================="
+echo -e "Setting up git."
+echo -e "========================================================================="
+echo -e "\\n\\n\\n"
 
 # Must me done fist because variable depend on the conf giles
 cp $DOTFILES/git/gitconfig $HOME/.gitconfig
@@ -29,3 +33,9 @@ else
         git config --global credential.helper "cache --timeout 3600"
     fi
 fi
+
+echo -e "\\n\\n\\n"
+echo -e "========================================================================="
+echo -e "done with git."
+echo -e "========================================================================="
+echo -e "\\n\\n\\n"
