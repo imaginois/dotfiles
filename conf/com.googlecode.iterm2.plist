@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -50165,7 +50167,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-1115 385 786 276 -1920 -73 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1155 329 918 423 -1920 -73 1920 1057 </string>
+	<string>-1166 330 918 423 -1920 -73 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>545 324 730 552 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
@@ -50820,7 +50822,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>DroidSansMonoForPowerline 15</string>
+			<string>HackNerdFontComplete-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -50903,6 +50905,10 @@
 	<string>AFC8C6A3-7213-4568-9EAF-5F0AB7FF7400</string>
 	<key>NoSyncLastTipTime</key>
 	<real>573250665.39222205</real>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -50947,6 +50953,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/imaginois/.dotfiles/conf</string>
+	<key>QuitWhenAllWindowsClosed</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -50959,6 +50967,8 @@
 	<date>2019-03-03T06:20:36Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SmartPlacement</key>
+	<true/>
 	<key>iTerm Version</key>
 	<string>3.2.7</string>
 </dict>
