@@ -50165,9 +50165,9 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>-1115 385 786 276 -1920 -73 1920 1057 </string>
+	<string>-1047 349 786 276 -1920 -73 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1166 330 918 423 -1920 -73 1920 1057 </string>
+	<string>-1166 330 796 486 -1920 -73 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>545 324 730 552 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
