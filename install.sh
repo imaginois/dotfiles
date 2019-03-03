@@ -23,8 +23,15 @@ echo -e "=======================================================================
 #echo "Initializing submodule(s)"
 #git submodule update --init --recursive
 
+# Generic commands to execute
+sudo easy_install pip
+
+
 source scripts/backup.sh
 source scripts/restore.sh
+source scripts/zsh.sh
+source scripts/tmux.sh
+source scripts/vim.sh
 # source scripts/link.sh
 source scripts/git.sh
 

@@ -47,6 +47,8 @@ formulas=(
     ranger
     peco
     ntfs-3g
+    screenfetch
+    neofetch
 )
 
 
@@ -91,7 +93,7 @@ for formula in "${formulas[@]}"; do
     fi
 done
 
-for cask in “${casks[@]}”; do
+for cask in "${casks[@]}"; do
     cask_name=$( echo "$cask" | awk '{print $1}' )
     if brew list "$cask_name" > /dev/null 2>&1; then
         echo "$cask_name already installed... skipping."
