@@ -110,6 +110,9 @@ brew cast install font-inconsolata-dz-for-powerline
 brew cast install font-inconsolata-for-powerline
 brew cast install font-powerline-symbols
 brew cast install font-ubuntu-mono-derivative-powerline
+
+brew install reattach-to-user-namespace
+
 brew cleanup
 
 
