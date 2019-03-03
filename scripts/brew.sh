@@ -49,6 +49,11 @@ formulas=(
     ntfs-3g
     screenfetch
     neofetch
+    zsh-completions
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-git-prompt
+    zsh-history-substring-search
 )
 
 
@@ -100,16 +105,13 @@ for cask in "${casks[@]}"; do
     fi
 done
 
-
-brew tap caskroom/fonts
-brew update
 brew cask install font-hack-nerd-font
 brew cask install font-inconsolata-nerd-font
-brew cast install font-mononoki-nerd-font
-brew cast install font-inconsolata-dz-for-powerline
-brew cast install font-inconsolata-for-powerline
-brew cast install font-powerline-symbols
-brew cast install font-ubuntu-mono-derivative-powerline
+brew cask install font-mononoki-nerd-font
+brew cask install font-inconsolata-dz-for-powerline
+brew cask install font-inconsolata-for-powerline
+brew cask install font-powerline-symbols
+brew cask install font-ubuntu-mono-derivative-powerline
 
 brew install reattach-to-user-namespace
 

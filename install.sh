@@ -10,7 +10,7 @@ command_exists() {
 xcode-select --install
 
 # Ask for the administrator password upfront
-sudo -v
+#sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
@@ -30,11 +30,11 @@ ln -s $DOTFILES/bin $HOME
 
 source scripts/backup.sh
 source scripts/restore.sh
+source scripts/git.sh
 source scripts/zsh.sh
 source scripts/tmux.sh
 source scripts/vim.sh
 # source scripts/link.sh
-source scripts/git.sh
 
 # only perform macOS-specific install
 if [ "$(uname)" == "Darwin" ]; then
