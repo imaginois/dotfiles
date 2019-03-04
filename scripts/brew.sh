@@ -81,6 +81,7 @@ casks=(
     flycut
     slack
     discord
+    telegram
     gitter
     dropbox
     the-unarchiver

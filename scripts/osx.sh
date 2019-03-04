@@ -16,6 +16,7 @@ defaults read NSGlobalDomain > DefaultsGlobalBefore.info
 
 osascript -e 'tell application "System Preferences" to quit'
 
+sudo -v
 
 # ~/.macos — https://mths.be/macos
 
@@ -79,8 +80,8 @@ defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 #echo "Set dock icon size"
 #defaults write -g com.apple.dock largesize -float 60
 
-echo "Change Apple OS X Dock size"
-defaults write -g com.apple.dock tilesize -int 32; killall Dock
+#echo "Change Apple OS X Dock size"
+#defaults write -g com.apple.dock tilesize -int 32; killall Dock
 
 echo "Interface, action on double-clicking window"
 defaults write -g AppleActionOnDoubleClick -string "Maximize";
@@ -197,7 +198,7 @@ echo "Enable snap-to-grid for desktop icons"
 # echo "Disable the warning before emptying the Trash"
 # defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-Empty Trash securely by default
+echo  "Empty Trash securely by default"
 defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 #echo "Require password immediately after sleep or screen saver begins"
