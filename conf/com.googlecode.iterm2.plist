@@ -50313,9 +50313,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-1047 349 786 276 -1920 -73 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>35 230 937 514 0 0 1920 1200 </string>
+	<string>35 293 918 423 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 43 650 451 0 0 1920 1177 </string>
+	<string>278 248 1426 808 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -50630,7 +50630,7 @@
 				<real>0.0</real>
 			</dict>
 			<key>Cursor Type</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
