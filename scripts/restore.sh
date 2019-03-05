@@ -20,7 +20,11 @@ if [ ! -f $HOME/.ssh/id_rsa ]; then
 fi
 ssh-add -K ~/.ssh/id_rsa
 
-
+echo -e "Restore .config"
+if [ ! -d $HOME/.config ]; then
+	echo "~/.config doesn't exist. Creating symlink"
+	ln -s $DOTFILES/dot/.config $HOME
+fi
 
 echo -e "\\n\\n\\n"
 echo -e "========================================================================="
