@@ -49,6 +49,7 @@ formulas=(
     ntfs-3g
     screenfetch
     neofetch
+    youtube-dl
     zsh-completions
     zsh-autosuggestions
     zsh-syntax-highlighting
