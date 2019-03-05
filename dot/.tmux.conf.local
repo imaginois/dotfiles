@@ -314,7 +314,12 @@ set -g @tpm_plugins '          \
 #    tmux-plugins/tmux-cpu       \
 '
 
+# Plugins conf
+set -g @continuum-restore 'on'
+
+
 # Initialize TMUX plugin manager (keep this line at the very bottom of
 # tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
+
 
