@@ -39,6 +39,17 @@ formulas=(
     vim
     z
     zsh
+    w3m
+    libcaca
+    highlight
+    atool
+    lynx 
+    w3m 
+    elinks 
+    poppler 
+    transmission 
+    mediainfo 
+    exiftool
     ripgrep
     git-standup
     entr
