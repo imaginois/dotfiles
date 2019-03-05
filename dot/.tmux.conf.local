@@ -292,3 +292,29 @@ set -g mouse on
 
 # move status line to top
 set -g status-position top
+
+
+# set -g status-right '#{cpu_bg_color} CPU: #{cpu_icon} #{cpu_percentage} | %a %h-%d %H:%M '
+
+
+# =====================================================
+
+
+# List of plugins                
+# https://github.com/tmux-plugins/tpm/blob/master/docs/tpm_not_working.md
+set -g @tpm_plugins '          \
+    tmux-plugins/tpm             \
+    tmux-plugins/tmux-sensible   \
+    tmux-plugins/tmux-resurrect  \
+    tmux-plugins/tmux-continuum  \
+    tmux-plugins/tmux-copycat    \
+    tmux-plugins/tmux-yank      \
+    tmux-plugins/tmux-open      \
+    tmux-plugins/tmux-sidebar   \
+#    tmux-plugins/tmux-cpu       \
+'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of
+# tmux.conf)
+run -b '~/.tmux/plugins/tpm/tpm'
+
