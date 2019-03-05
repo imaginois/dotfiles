@@ -24,9 +24,19 @@ echo -e "=======================================================================
 #git submodule update --init --recursive
 
 # Generic commands to execute
+echo "Install pip"
 sudo easy_install pip
+
+echo "Symling the ~/bin directory"
 ln -s $DOTFILES/bin $HOME
 
+echo "Restore .alias"
+ln -s $DOTFILES/dot/.alias $HOME
+
+echo  "Restore .exports"
+ln -s $DOTFILES/dot/.exports $HOME
+
+echo -e "\n\n==================================================================\n\n"
 
 source scripts/backup.sh
 source scripts/restore.sh

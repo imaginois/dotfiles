@@ -55,10 +55,10 @@
     NSNavPanelSidebarKeyForOpen =     (
     );
     NSNavRecentPlaces =     (
+        "~/.dotfiles/dot",
         "~/.dotfiles/conf",
         "~/Downloads/mbadolato-iTerm2-Color-Schemes-08a728b/schemes",
         "~/.dotfiles/scripts",
-        "~/.dotfiles/dot",
         "~/.dotfiles/dot/.ssh"
     );
     NSPersonNameDefaultDisplayNameOrder = 0;

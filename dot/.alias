@@ -1,0 +1,1 @@
+alias nomad="cd ~/www/nomad && vagrant up"
