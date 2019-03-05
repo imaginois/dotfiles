@@ -1,9 +1,9 @@
 # gitconfig
 [user]
-    name = Metodi Deribanov
-    email = imaginois@gmail.com
+	name = Metodi Deribanov
+	email = imaginois@gmail.com
 [github]
-    user = imaginois
+	user = imaginois
 [init]
     templatedir = ~/.dotfiles/git/templates
 [alias]

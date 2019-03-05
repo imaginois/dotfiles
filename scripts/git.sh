@@ -7,8 +7,12 @@ echo -e "=======================================================================
 echo -e "\\n\\n\\n"
 
 # Must me done fist because variable depend on the conf giles
-cp $DOTFILES/git/gitconfig $HOME/.gitconfig
-cp $DOTFILES/git/gitignore_global $HOME/.gitignore_global
+# make sure you run backup.sh first
+rm $HOME/.gitconfig
+rm $HOME/.gitignore_global
+
+ln -s  $DOTFILES/git/gitconfig $HOME/.gitconfig
+ln -s  $DOTFILES/git/gitignore_global $HOME/.gitignore_global
 
 defaultName=$( git config --global user.name )
 defaultEmail=$( git config --global user.email )

@@ -30,6 +30,7 @@ linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
 files=(
   .zshrc
   .gitconfig
+  .gitignore_global
   .bashrc
 )
 
