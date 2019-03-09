@@ -20,6 +20,10 @@ formulas=(
     diff-so-fancy
     dnsmasq
     docker
+    docker-machine
+    docker-compose
+    docker-swarm
+    docker-ls
     fzf
     git
     highlight
@@ -43,7 +47,8 @@ formulas=(
     libcaca
     highlight
     atool
-    lynx 
+    lynx
+    htop 
     w3m 
     elinks 
     poppler 
@@ -58,6 +63,7 @@ formulas=(
     ranger
     peco
     ntfs-3g
+    sshfs
     screenfetch
     neofetch
     youtube-dl
@@ -72,6 +78,7 @@ formulas=(
 casks=(
     google-chrome
     chrome-devtools
+    docker
     iterm2
     atom
     sublime-text
@@ -81,7 +88,6 @@ casks=(
     skype
     viber
     whatsapp
-    vmware-fusion
     vagrant
     virtualbox
     kitematic
