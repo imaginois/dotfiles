@@ -1,3 +1,4 @@
 alias nomad="cd ~/www/nomad && vagrant up"
-alias mount_hass_pi="sudo sshfs -o allow_other,defer_permissions,IdentityFile=~/.ssh/id_rsa pi@192.168.1.120:/home/pi/ ~/www/home-assistant-pi"
-alias unmount_hass_pi="sudo killall sshfs && sudo umount pi@192.168.1.120:/home/pi/; rm -rf ~/www/home-assistant-pi"
+alias mount_hass_pi="sudo sshfs -o allow_other,defer_permissions,IdentityFile=~/.ssh/id_rsa home-assistant:/home/pi/ ~/www/home-assistant-pi"
+alias unmount_hass_pi="sudo killall sshfs && sudo umount home-assistant:/home/pi/; rm -rf ~/www/home-assistant-pi"
+
