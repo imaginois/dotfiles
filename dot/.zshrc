@@ -102,7 +102,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 source $HOME/.exports
 source $HOME/.alias
-
+source $HOME/.todo/todo_completion
 # =================================================================================
 
 fpath=(/usr/local/share/zsh-completions $fpath)
