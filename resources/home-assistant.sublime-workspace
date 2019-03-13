@@ -7,6 +7,17 @@
 	},
 	"buffers":
 	[
+		{
+			"contents": "#!/usr/bin/env bash\n\ndocker=1\n\n\t\t# -v /etc/motion:/etc/motion \\\n\t\t# -v /var/lib/motion:/var/lib/motion \\\n\t\t# -v /usr/share/motion:/usr/share/motion \\\n\nif [ $docker -gt 0 ];then\n\tif [ ! \"$(docker ps -a | grep motioneye)\" ]; then\n\t  echo \"## Install motionEye in Docker\"\n\t  docker run --name=\"motioneye\" \\\n\t\t-p 8766:8765 \\\n\t\t-p 8767:8081 \\\n\t\t-p 8768:8082 \\\n\t\t-p 8769:8083 \\\n\t\t-p 8770:8084 \\\n\t\t--hostname=\"motioneye\" \\\n\t\t--device=/dev/video0   \\\n\t\t-v /etc/localtime:/etc/localtime:ro \\\n\t\t-v /etc/motioneye:/etc/motioneye \\\n\t\t-v /var/lib/motioneye:/var/lib/motioneye \\\n\t\t--restart=\"always\" \\\n\t\t--detach=true \\\n\t\tccrisan/motioneye:master-armhf\n\telse\n\t  echo \"## MotionEye already installed\"\n\t  docker ps -a | grep motioneye\n\tfi\nelse\n\tif ! command_exists motion; then\n\t\techo \"## Remove motion if already installed\"\n\t\tsudo apt-get remove --purge -y motion\n\t\techo \"## Installing utilities needed by motion\"\n\t\tsudo apt-get install ffmpeg v4l-utils\n\t\tsudo apt-get install libmariadbclient18 libpq5\n\t\tprev_dir=$PWD\n\t\techo \"cd /tmp\"\n\t\tsudo cd /tmp\n\t\techo \"## Download and install motion\"\n\t\tsudo wget https://github.com/Motion-Project/motion/releases/download/release-4.1.1/pi_stretch_motion_4.1.1-1_armhf.deb\n\t\tsudo dpkg -i pi_stretch_motion_4.1.1-1_armhf.deb\n\t\tsudo apt-get install python-pip python-dev libssl-dev libcurl4-openssl-dev libjpeg-dev libz-dev\n\t\techo \"## pip install motioneye\"\n\t\tsudo pip install motioneye\n\t\tsudo mkdir -p /etc/motioneye\n\t \tsudo cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf\n\t\tsudo mkdir -p /var/lib/motioneye\n\t\tsudo cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service\n\t\techo \"## Reload daemon and enable startup service\"\n\t\tsudo systemctl daemon-reload\n\t\tsudo systemctl enable motioneye\n\t\tsudo systemctl start motioneye\n\t\tcd $prev_dir\n\telse\n\t\techo \"## motion appears to be already installed\"\n\tfi\nfi\n",
+			"file": "/Users/imaginois/www/home-assistant-pi/rpi-setup/scripts/motioneye.sh",
+			"file_size": 1911,
+			"file_write_time": 131966118090000000,
+			"settings":
+			{
+				"buffer_size": 1911,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -52,6 +63,8 @@
 	],
 	"file_history":
 	[
+		"/Users/imaginois/www/home-assistant-pi/rpi-setup/scripts/hassio.sh",
+		"/Users/imaginois/www/home-assistant-pi/rpi-setup/install.sh",
 		"/Users/imaginois/bin/imgcat",
 		"/Users/imaginois/.dotfiles/dot/.tmux.conf",
 		"/Users/imaginois/.dotfiles/dot/.tmux.conf.local",
@@ -71,7 +84,7 @@
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -85,6 +98,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sudo",
+			"var/lib"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -102,8 +117,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/imaginois/www/home-assistant-pi/rpi-setup/scripts/motioneye.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1911,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								380,
+								380
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 13.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

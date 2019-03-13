@@ -90,6 +90,7 @@ casks=(
     whatsapp
     vagrant
     virtualbox
+    firefox
     kitematic
     sourcetree
     osxfuse

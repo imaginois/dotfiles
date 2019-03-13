@@ -13,7 +13,7 @@ echo -e "\\n\\n\\n"
 
 
 echo -e "Restore .ssh"
-cp -vr $DOTFILES/dot/.ssh/* $HOME/.ssh/
+ln -s $DOTFILES/dot/.ssh/* $HOME/.ssh/
 if [ ! -f $HOME/.ssh/id_rsa ]; then
 	echo "Looks like you don't have a public/private keypair"
 	ssh-keygen -f $HOME/.ssh/id_rsa
