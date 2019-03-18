@@ -5,10 +5,24 @@
 	],
 	"installed_packages":
 	[
+		"Alignment",
+		"All Autocomplete",
+		"AutoFileName",
+		"BracketHighlighter",
+		"Color Highlighter",
+		"ColorPicker",
+		"DocBlockr",
+		"Git",
+		"GitGutter",
+		"HTML-CSS-JS Prettify",
+		"HTML5",
 		"Package Control",
 		"rsub",
 		"SideBarEnhancements",
+		"SublimeCodeIntel",
 		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"SublimeLinter-json",
 		"Theme - Arc"
 	]
 }
