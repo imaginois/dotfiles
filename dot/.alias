@@ -4,6 +4,9 @@ alias unmount_hass_pi="sudo killall sshfs && sudo umount home-assistant:/home/pi
 
 alias sudoedit='sudo vim'
 
-### TODO.txt Aliases
+alias ytdlmp3='youtube-dl --extract-audio --audio-format=mp3'
+alias mp4-mp3='for i in *.mp4; do ffmpeg -i "$i" "${i%.*}.mp3"; done'
 
+### TODO.txt Aliases
 alias t="~/.todo/todo.sh -d ~/.todo/config"
+alias nomad='cd ~/www/nomad && vagrant up'
