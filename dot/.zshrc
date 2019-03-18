@@ -109,18 +109,16 @@ source $HOME/.todo/todo_completion
 # ==============================================================================
 unsetopt correct_all
 
+eval "$(docker-machine env docker-local)"
+#eval "$(docker-machine env docker-ocean)"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # You may also need to force rebuild `zcompdump`:
-
 #  rm -f ~/.zcompdump; compinit
-
 # Additionally, if you receive "zsh compinit: insecure directories" warnings when attempting
 # to load these completions, you may need to run this:
-
 #  chmod go-w '/usr/local/share'
-
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
