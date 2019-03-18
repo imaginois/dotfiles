@@ -79,7 +79,6 @@ formulas=(
 casks=(
     google-chrome
     chrome-devtools
-    docker
     iterm2
     atom
     sublime-text
