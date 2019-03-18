@@ -12,7 +12,33 @@ killall "Mail"
 echo "Kill Transmission"
 killall "Transmission"
 
+echo "Kill Viber"
+killall "Viber"
+
+echo "Kill Telegram"
+killall "Telegram"
+
+echo "Kill Slack"
+killall "Slack"
+
+ 
+echo "Kill Gitter"
+killall "Gitter"
+ 
 echo "Shut down all vagrant machines"
 for i in `vagrant global-status --prune | grep running | awk '{print $1}'`; do
     vagrant halt $i
 done;
+
+
+
+
+echo "Shut down all docker machines"
+for i in `docker-machine ls | grep local | awk '{print $1}'`; do
+    docker-machine stop $i
+done;
+
+ 
+
+
+
