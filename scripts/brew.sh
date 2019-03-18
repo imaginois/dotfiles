@@ -67,6 +67,7 @@ formulas=(
     screenfetch
     neofetch
     youtube-dl
+    mps-youtube
     zsh-completions
     zsh-autosuggestions
     zsh-syntax-highlighting

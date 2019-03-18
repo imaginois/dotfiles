@@ -36,7 +36,7 @@ echo "expand save dialog by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 echo "show the ~/Library folder in Finder"
-chflags nohidden ~/Library
+chflags nohidden ~/Library/
 
 echo "disable resume system wide"
 defaults write NSGlobalDomainNSQuitAlwaysKeepWindows -bool false

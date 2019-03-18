@@ -294,7 +294,7 @@ set -g mouse on
 set -g status-position top
 
 
-# set -g status-right '#{cpu_bg_color} CPU: #{cpu_icon} #{cpu_percentage} | %a %h-%d %H:%M '
+# set -g status-right 'Continuum: #{continuum_status} | #{cpu_bg_color} CPU: #{cpu_icon} #{cpu_percentage} | %a %h-%d %H:%M '
 
 
 # =====================================================
@@ -316,7 +316,9 @@ set -g @tpm_plugins '          \
 
 # Plugins conf
 set -g @continuum-restore 'on'
-
+set -g @continuum-save-interval '5'
+set -g @resurrect-capture-pane-contents 'on'
+set -g @resurrect-strategy-vim 'session'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of
 # tmux.conf)
