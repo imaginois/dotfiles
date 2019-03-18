@@ -26,6 +26,12 @@ if [ ! -d $HOME/.config ]; then
 	ln -s $DOTFILES/dot/.config $HOME
 fi
 
+echo -e "Restore .atom"
+if [ ! -d $HOME/.atom ]; then
+	echo "~/.atom doesn't exist. Creating symlink"
+	ln -s $DOTFILES/dot/.atom $HOME
+fi
+
 echo -e "Restore .todo"
 if [ ! -d $HOME/.todo ]; then
 	echo "~/.todo doesn't exist. Creating symlink"
