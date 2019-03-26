@@ -1,9 +1,2 @@
 .DS_Store
-*/Package Control.last-run
-*/Package Control.ca-list
-*/Package Control.ca-bundle
-*/Package Control.system-ca-bundle
-*/Sublime/Packages/User/Package Control.cache/
-*/Package Control.ca-certs/
-*/Sublime/Packages/User/Package Control.last-run
-#*/Sublime/Packages/jsonschema
+dot/.atom/packages/
