@@ -1,7 +1,25 @@
 "*":
+  "atom-material-ui":
+    colors:
+      abaseColor: "#a1274e"
+      genAccent: true
+      predefinedColor: "Red"
+    tabs:
+      compactTabs: true
+      stretchedTabs: true
+      tintedTabBar: true
   core:
     automaticallyUpdate: false
     telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    zoomFontWhenCtrlScrolling: true
   "exception-reporting":
     userId: "604e4658-1398-4709-9bed-d3294f310efe"
   welcome:
