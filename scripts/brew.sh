@@ -81,6 +81,7 @@ casks=(
     chrome-devtools
     iterm2
     atom
+    brackets
     sublime-text
     spectacle
     mounty
