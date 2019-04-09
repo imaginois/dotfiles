@@ -109,7 +109,8 @@ source $HOME/.todo/todo_completion
 # ==============================================================================
 unsetopt correct_all
 
-eval "$(docker-machine env docker-local)"
+eval "$(docker-machine env)"
+#eval "$(docker-machine env docker-local)"
 #eval "$(docker-machine env docker-ocean)"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
