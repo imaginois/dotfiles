@@ -24,6 +24,7 @@ formulas=(
     docker-compose
     docker-swarm
     docker-ls
+    ctop
     fzf
     git
     highlight
