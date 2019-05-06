@@ -1,8 +1,10 @@
+### SSH And Remote connections aliase ###
 alias nomad="cd ~/www/nomad && vagrant up"
 alias mount_hass_pi="sudo sshfs -o allow_other,defer_permissions,IdentityFile=~/.ssh/id_rsa home-assistant:/home/pi/ ~/www/home-assistant-pi"
 alias unmount_hass_pi="sudo killall sshfs && sudo umount home-assistant:/home/pi/; rm -rf ~/www/home-assistant-pi"
 alias mount_nomad_ocean="sudo sshfs -o allow_other,defer_permissions,IdentityFile=~/.ssh/id_rsa nomad-ocean:/root ~/www/nomad-ocean"
 alias unmount_nomad_ocean="sudo killall sshfs && sudo umount nomad-ocean:/root; rm -rf ~/www/nomad-ocean"
+alias vnc_nomad_ocean="ssh -L 5901:127.0.0.1:5901 -N -f -l root 188.166.122.157 sleep 10; vncviewer 127.0.0.1:5901"
  
 alias sudoedit='sudo vim'
 
@@ -25,3 +27,9 @@ alias ggc='git gc --prune=now --aggressive && git reflog expire --expire=now --a
 ### Docker Aliases
 alias dlnc='docker inspect -f "{{.Name}} {{.Config.Cmd}}" $(docker ps -a -q)'
 
+kill_vnc_nomad_ocean () {
+  for i in $(ps aux | grep 5901:127 | awk '{print $2}')
+  do 
+    kill $i
+  done
+}
