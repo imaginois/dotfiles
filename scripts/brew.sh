@@ -59,6 +59,7 @@ formulas=(
     ripgrep
     git-standup
     entr
+    httrack
     zplug
     watch
     ranger
