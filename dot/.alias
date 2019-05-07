@@ -6,6 +6,7 @@ alias mount_nomad_ocean="sudo sshfs -o allow_other,defer_permissions,IdentityFil
 alias unmount_nomad_ocean="sudo killall sshfs && sudo umount nomad-ocean:/root; rm -rf ~/www/nomad-ocean"
 alias vnc_nomad_ocean="ssh -L 5901:127.0.0.1:5901 -N -f -l root 188.166.122.157 sleep 10; vncviewer 127.0.0.1:5901"
  
+### General Aliases ###
 alias sudoedit='sudo vim'
 
 alias ytdlmp3='youtube-dl --extract-audio --audio-format=mp3'
@@ -32,4 +33,9 @@ kill_vnc_nomad_ocean () {
   do 
     kill $i
   done
+}
+
+wgetcloneurl () {
+  echo "Cloning website \e[100m\e[92m $1 \e[0m"
+  wget --mirror --convert-links --adjust-extension --page-requisites --no-parent $1
 }
