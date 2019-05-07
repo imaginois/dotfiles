@@ -70,8 +70,8 @@ plugins=(
 	web-search
 	tig
 	colored-man-pages
-	zsh-completions
-	zsh-syntax-highlighting
+#	zsh-completions
+#	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
