@@ -5,15 +5,12 @@ if test ! "$( command -v brew )"; then
     ruby -e "$( curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )"
 fi
 
-echo -e "\n\n\n"
-echo -e "\n\n\n"
 echo -e "========================================================================="
-echo -e "Installing homebrew packages."
+echo -e "### Installing homebrew packages."
 echo -e "========================================================================="
 
 
-echo -e "\\n\\nInstalling homebrew packages..."
-echo "=============================="
+echo -e "\n## Installing homebrew packages..."
 
 formulas=(
     bat
@@ -83,7 +80,6 @@ casks=(
     chrome-devtools
     iterm2
     atom
-    brackets
     sublime-text
     spectacle
     mounty
@@ -142,8 +138,7 @@ brew cleanup
 
 
 # After the install, setup fzf
-echo -e "\\n\\nRunning fzf install script..."
-echo "=============================="
+echo -e "\\n\\n## Running fzf install script..."
 /usr/local/opt/fzf/install --all --no-bash --no-fish
 
 # after the install, install neovim python libraries

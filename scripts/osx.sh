@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
+### Install all the neccessary packages with homebrew
+source $DOTFILES/scripts/brew.sh
+
 # https://raw.githubusercontent.com/nicknisi/dotfiles/master/install/osx.sh
 # https://raw.githubusercontent.com/mathiasbynens/dotfiles/master/.macos
 # https://www.intego.com/mac-security-blog/unlock-the-macos-docks-hidden-secrets-in-terminal/
 
-
-
-echo -e "\n\n\n"
 echo "========================================================================="
-echo "Setting MacOS defaults."
+echo "### Setting MacOS defaults."
 echo "========================================================================="
 
 
@@ -23,8 +23,7 @@ sudo -v
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 
-echo -e "\\n\\nSetting OS X settings"
-echo "=============================="
+echo -e "\n## Setting OS X settings"
 
 echo "Finder: show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -400,12 +399,9 @@ defaults write com.apple.screencapture type -string "png"
 # Enable HiDPI display modes (requires restart)
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
-
-
-
-
-
 defaults read NSGlobalDomain > DefaultsGlobalAfter.info
 
-echo "Kill affected applications"
+echo "### Done setting up MacOSX decaults"
+
+echo "## Kill affected applications"
 for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done

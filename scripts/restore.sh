@@ -5,51 +5,49 @@
 DOTFILES=$HOME/.dotfiles
 BACKUP_DIR=$HOME/.dotfiles-backup
 
-echo -e "\\n\\n\\n"
 echo -e "========================================================================="
-echo -e "Restoring dotfiles and conf files."
+echo -e "### Restoring dotfiles and conf files."
 echo -e "========================================================================="
-echo -e "\\n\\n\\n"
 
-
-echo -e "Restore .ssh"
-ln -s $DOTFILES/dot/.ssh/* $HOME/.ssh/
-if [ ! -f $HOME/.ssh/id_rsa ]; then
-	echo "Looks like you don't have a public/private keypair"
-	ssh-keygen -f $HOME/.ssh/id_rsa
+if [ ! -d $HOME/.ssh ];then
+  echo -e "## Restore .ssh"
+  ln -s $DOTFILES/dot/.ssh/* $HOME/.ssh/
 fi
-ssh-add -K ~/.ssh/id_rsa
 
-echo -e "Restore .config"
+if [ ! -f $HOME/.ssh/id_rsa ]; then
+	echo "## Looks like you don't have a public/private keypair"
+	ssh-keygen -f $HOME/.ssh/id_rsa
+    ssh-add -K ~/.ssh/id_rsa
+fi
+
+echo -e "## Restore .config"
 if [ ! -d $HOME/.config ]; then
-	echo "~/.config doesn't exist. Creating symlink"
+	echo "# ~/.config doesn't exist. Creating symlink"
 	ln -s $DOTFILES/dot/.config $HOME
 fi
 
-echo -e "Restore .atom"
+echo -e "##Restore .atom"
 if [ ! -d $HOME/.atom ]; then
-	echo "~/.atom doesn't exist. Creating symlink"
+	echo "# ~/.atom doesn't exist. Creating symlink"
 	ln -s $DOTFILES/dot/.atom $HOME
 fi
 
 
-echo -e "Restore Sublime Text Packages and settings"
-if [ -d ~/Library/Application Support/Sublime Text 3/Packages ]; then
-	echo "delete Packages dir"
-	rm -rf ~/Library/Application Support/Sublime Text 3/Packages
+echo -e "## Restore Sublime Text Packages and settings"
+if [ -d ~/Library/Application\ Support/Sublime\ Text\ 3/Packages ]; then
+	echo "# delete Packages dir"
+	rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 fi
 
-echo "Symlynk dropbox folder to Sublime packages"
+echo "## Symlynk dropbox folder to Sublime packages"
 ln -s ~/Dropbox/Sublime/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 
-echo -e "Restore .todo"
+echo -e "## Restore .todo"
 if [ ! -d $HOME/.todo ]; then
-	echo "~/.todo doesn't exist. Creating symlink"
+	echo "# ~/.todo doesn't exist. Creating symlink"
 	ln -s $DOTFILES/dot/.todo $HOME
 fi
 
-echo -e "\\n\\n\\n"
 echo -e "========================================================================="
-echo -e "Done with restore."
+echo -e "### Done with restore."
 echo -e "========================================================================="
-echo -e "\\n\\n\\n"

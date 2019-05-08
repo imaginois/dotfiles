@@ -27,6 +27,7 @@ killall "Gitter"
  
 echo "Shut down all vagrant machines"
 for i in `vagrant global-status --prune | grep running | awk '{print $1}'`; do
+    echo "Executing: vagrant halt $i"
     vagrant halt $i
 done;
 
@@ -34,7 +35,8 @@ done;
 
 
 echo "Shut down all docker machines"
-for i in `docker-machine ls | grep local | awk '{print $1}'`; do
+for i in `docker-machine ls | grep virtualbox | awk '{print $1}'`; do
+    echo "Executing: docker-machine stop $i"
     docker-machine stop $i
 done;
 

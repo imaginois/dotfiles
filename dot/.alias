@@ -10,7 +10,7 @@ alias vnc_nomad_ocean="ssh -L 5901:127.0.0.1:5901 -N -f -l root 188.166.122.157 
 alias sudoedit='sudo vim'
 
 alias ytdlmp3='youtube-dl --extract-audio --audio-format=mp3'
-alias mp4-mp3='for i in *.mp4; do ffmpeg -i "$i" "${i%.*}.mp3"; done'
+alias mp4-mp3='for i in *.(mp4|mkv|webm); do ffmpeg -i "$i" "${i%.*}.mp3"; done'
 
 ### TODO.txt Aliases
 alias t="~/.todo/todo.sh -d ~/.todo/config"
@@ -37,5 +37,9 @@ kill_vnc_nomad_ocean () {
 
 wgetcloneurl () {
   echo "Cloning website \e[100m\e[92m $1 \e[0m"
-  wget --mirror --convert-links --adjust-extension --page-requisites --no-parent $1
+  wget --mirror --convert-links --adjust-extension --page-requisites --wait=5 --no-parent $1
+}
+
+cdp () {
+  mkdir -p $1 && cd $1
 }

@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-echo -e "\\n\\n\\n"
 echo -e "========================================================================="
-echo -e "Setting up git."
+echo -e "### Setting up git."
 echo -e "========================================================================="
-echo -e "\\n\\n\\n"
 
 # Must me done fist because variable depend on the conf giles
 # make sure you run backup.sh first
@@ -38,8 +36,6 @@ else
     fi
 fi
 
-echo -e "\\n\\n\\n"
 echo -e "========================================================================="
-echo -e "done with git."
+echo -e "### Done with git."
 echo -e "========================================================================="
-echo -e "\\n\\n\\n"

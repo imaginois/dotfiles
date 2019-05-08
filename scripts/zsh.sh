@@ -2,13 +2,13 @@
 
 sudo -v
 
-echo -e "\\n\\n\\n"
 echo -e "========================================================================="
-echo -e "Install oh-my-zsh."
+echo -e "### Install oh-my-zsh."
 echo -e "========================================================================="
-echo -e "\\n\\n\\n"
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "## Running sh -c $(curl -fsSL https://raw.../oh-my-zsh/install.sh)"
+echo "# Check /tmp/oh-my-zsh-install.log for details"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" | tee -a /tmp/oh-my-zsh-install.log >/dev/null
 
 if [ ! -e ~/.oh-my-zsh/custom/themes ]; then
 	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
