@@ -104,6 +104,8 @@ casks=(
     dropbox
     the-unarchiver
     google-backup-and-sync
+    cyberduck
+    forklift
   )
 
 for formula in "${formulas[@]}"; do

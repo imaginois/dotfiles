@@ -4,8 +4,8 @@
     "ADATA HD710 PRO" = 1;
     "ADATA USB Flash Drive" = 1;
     AKDeviceUnlockState = 1;
-    AKLastCheckInAttemptDate = "2019-05-08 08:55:10 +0000";
-    AKLastCheckInSuccessDate = "2019-05-08 08:55:12 +0000";
+    AKLastCheckInAttemptDate = "2019-05-09 05:52:40 +0000";
+    AKLastCheckInSuccessDate = "2019-05-08 16:43:14 +0000";
     AKLastEmailListRequestDateKey = "2019-05-07 16:30:33 +0000";
     AKLastIDMSEnvironment = 0;
     "Apple Inc. iBridge" = 1;
@@ -49,7 +49,7 @@
     NSCloseAlwaysConfirmsChanges = 1;
     NSDisableAutomaticTermination = 1;
     NSDocumentSaveNewDocumentsToCloud = 0;
-    NSLinguisticDataAssetsRequestTime = "2019-05-08 08:04:46 +0000";
+    NSLinguisticDataAssetsRequestTime = "2019-05-09 08:07:16 +0000";
     NSLinguisticDataAssetsRequested =     (
         en,
         "en_US",
@@ -63,11 +63,11 @@
     NSNavPanelSidebarKeyForOpen =     (
     );
     NSNavRecentPlaces =     (
+        "~/Downloads/DirectoryLister-DirectoryLister-a85b063",
         "~/www/nomad/scripts",
         "~/Dropbox/Sublime",
         "~/Pictures",
-        "~/Downloads/old pics",
-        "~/www/nomad"
+        "~/Downloads/old pics"
     );
     NSPersonNameDefaultDisplayNameOrder = 0;
     NSPersonNameDefaultShortNameFormat = 0;
@@ -99,6 +99,13 @@
     "com.apple.finder.SyncExtensions" =     {
         dirMap =         {
             "com.getdropbox.dropbox.garcon" =             (
+                "file:///Users/imaginois/Pictures/",
+                "file:///Users/imaginois/Dropbox/",
+                "file:///Users/imaginois/Documents/",
+                "file:///Users/imaginois/Downloads/",
+                "file:///Users/imaginois/Movies/",
+                "file:///Users/imaginois/Music/",
+                "file:///Users/imaginois/Desktop/"
             );
         };
     };
