@@ -9,4 +9,6 @@ pipelines:
           - apt-get install zip unzip
           - ls -la
           - zip -r dotfiles_`date`.zip ./
-          - git ftp init -vv  --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://deribanov.com/
+#          - git ftp init -vv  --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://deribanov.com/
+          - curl -T dotfiles_`date`.zip ftp://deribanov.com/ --user $FTP_USERNAME:$FTP_PASSWORD
+
