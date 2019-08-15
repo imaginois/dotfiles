@@ -12,6 +12,7 @@ alias sudoedit='sudo vim'
 
 alias ytdlmp3='youtube-dl --extract-audio --audio-format=mp3'
 alias mp4-mp3='for i in *.(mp4|mkv|webm); do ffmpeg -i "$i" "${i%.*}.mp3"; done'
+alias mkv-mp4='for i in *.(mkv|webm); do ffmpeg -i "$i" "${i%.*}.mp4"; done'
 
 ### TODO.txt Aliases
 alias t="~/.todo/todo.sh -d ~/.todo/config"
@@ -44,3 +45,7 @@ wgetcloneurl () {
 cdp () {
   mkdir -p $1 && cd $1
 }
+
+
+alias fj="functional-javascript"
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
