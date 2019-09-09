@@ -10,6 +10,7 @@ echo -e "### Restoring dotfiles and conf files."
 echo -e "========================================================================="
 
 if [ ! -d $HOME/.ssh ];then
+  mkdir -p $HOME/.ssh
   echo -e "## Restore .ssh"
   ln -s $DOTFILES/dot/.ssh/* $HOME/.ssh/
 fi
