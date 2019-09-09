@@ -6,8 +6,10 @@ echo -e "=======================================================================
 
 # Must me done fist because variable depend on the conf giles
 # make sure you run backup.sh first
-rm $HOME/.gitconfig
-rm $HOME/.gitignore_global
+if [ ! -f $HOME/.gitconfig ];then
+  rm $HOME/.gitconfig              
+  rm $HOME/.gitignore_global
+fi
 
 ln -s  $DOTFILES/git/gitconfig $HOME/.gitconfig
 ln -s  $DOTFILES/git/gitignore_global $HOME/.gitignore_global
