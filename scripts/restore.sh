@@ -38,10 +38,10 @@ echo -e "## Restore Sublime Text Packages and settings"
 if [ -d ~/Library/Application\ Support/Sublime\ Text\ 3/Packages ]; then
 	echo "# delete Packages dir"
 	rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
-fi
 
-echo "## Symlynk dropbox folder to Sublime packages"
-ln -s ~/Dropbox/Sublime/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+    echo "## Symlynk dropbox folder to Sublime packages"
+    ln -s ~/Dropbox/Sublime/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+fi
 
 echo -e "## Restore .todo"
 if [ ! -d $HOME/.todo ]; then
