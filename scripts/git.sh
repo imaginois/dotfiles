@@ -6,13 +6,14 @@ echo -e "=======================================================================
 
 # Must me done fist because variable depend on the conf giles
 # make sure you run backup.sh first
-if [ ! -f $HOME/.gitconfig ];then
-  rm $HOME/.gitconfig              
+if [ -f $HOME/.gitconfig ];then
+  rm $HOME/.gitconfig
   rm $HOME/.gitignore_global
 fi
 
-ln -s  $DOTFILES/git/gitconfig $HOME/.gitconfig
-ln -s  $DOTFILES/git/gitignore_global $HOME/.gitignore_global
+
+ln -sv  $DOTFILES/git/gitconfig $HOME/.gitconfig
+ln -sv  $DOTFILES/git/gitignore_global $HOME/.gitignore_global
 
 defaultName=$( git config --global user.name )
 defaultEmail=$( git config --global user.email )

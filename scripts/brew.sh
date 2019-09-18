@@ -46,12 +46,12 @@ formulas=(
     highlight
     atool
     lynx
-    htop 
-    w3m 
-    elinks 
-    poppler 
-    transmission 
-    mediainfo 
+    htop
+    w3m
+    elinks
+    poppler
+    transmission
+    mediainfo
     exiftool
     ripgrep
     git-standup
@@ -88,7 +88,6 @@ casks=(
     viber
     whatsapp
     vagrant
-    virtualbox
     firefox
     kitematic
     sourcetree

@@ -39,10 +39,11 @@ dirs=(
 
 
 for file in ${files[@]}; do
-    target="$HOME/$file"
-    if [ -f "$target" ]; then
+    source="$HOME/$file"
+    destination="$BACKUP_DIR/$file"
+    if [ -f "$source" && ! ]; then
         echo "## backing up $file"
-        cp -v "$target" "$BACKUP_DIR"
+        cp -v "$source" "$destination"
     else
         echo -e "## $file does not exist at this location or is a symlink"
     fi
@@ -50,11 +51,11 @@ done
 
 
 for dir in ${dirs[@]}; do
-    target="$HOME/$dir"
-    if [ -d "$target" ]; then
+    source="$HOME/$dir"
+    if [ -d "$source" ]; then
         echo "## backing up $dir"
-        # cp -rv "$target" "$BACKUP_DIR"
-        rsync -av --progress $target $BACKUP_DIR --exclude *cache*
+        # cp -rv "$source" "$BACKUP_DIR"
+        rsync -av --progress $source $BACKUP_DIR --exclude *cache*
     else
         echo -e "## $dir does not exist at this location or is a symlink"
     fi
